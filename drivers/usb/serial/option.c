@@ -238,6 +238,8 @@ static void option_instat_callback(struct urb *urb);
 /* These Quectel products use Qualcomm's vendor ID */
 #define QUECTEL_PRODUCT_UC20			0x9003
 #define QUECTEL_PRODUCT_UC15			0x9090
+#define QUECTEL_PRODUCT_EC20			0x9215
+
 /* These u-blox products use Qualcomm's vendor ID */
 #define UBLOX_PRODUCT_R410M			0x90b2
 /* These Yuga products use Qualcomm's vendor ID */
@@ -249,6 +251,11 @@ static void option_instat_callback(struct urb *urb);
 #define QUECTEL_PRODUCT_EC25			0x0125
 #define QUECTEL_PRODUCT_BG96			0x0296
 #define QUECTEL_PRODUCT_EP06			0x0306
+#define QUECTEL_PRODUCT_EG91			0x0191
+#define QUECTEL_PRODUCT_EG95			0x0195
+#define QUECTEL_PRODUCT_EG06_EP06_EM06		0x0306
+#define QUECTEL_PRODUCT_BG96			0x0296
+#define QUECTEL_PRODUCT_AG35			0x0435
 
 #define CMOTECH_VENDOR_ID			0x16d8
 #define CMOTECH_PRODUCT_6001			0x6001
@@ -566,6 +573,18 @@ static void option_instat_callback(struct urb *urb);
 
 
 static const struct usb_device_id option_ids[] = {
+#if 1 //Added by Quectel
+	{ USB_DEVICE(QUALCOMM_VENDOR_ID, QUECTEL_PRODUCT_UC15) }, /* Quectel UC15 */
+	{ USB_DEVICE(QUALCOMM_VENDOR_ID, QUECTEL_PRODUCT_UC20) }, /* Quectel UC20 */
+	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EC25) }, /* Quectel EC25 */
+	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EC21) }, /* Quectel EC21 */
+	{ USB_DEVICE(QUALCOMM_VENDOR_ID, QUECTEL_PRODUCT_EC20) }, /* Quectel EC20 */
+	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EG91) }, /* Quectel EG91 */
+	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EG95) }, /* Quectel EG95 */
+	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EG06_EP06_EM06) }, /* Quectel EG06/EP06/EM06 */
+	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_BG96) }, /* Quectel BG96 */
+	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_AG35) }, /* Quectel AG35 */
+#endif
 	{ USB_DEVICE(OPTION_VENDOR_ID, OPTION_PRODUCT_COLT) },
 	{ USB_DEVICE(OPTION_VENDOR_ID, OPTION_PRODUCT_RICOLA) },
 	{ USB_DEVICE(OPTION_VENDOR_ID, OPTION_PRODUCT_RICOLA_LIGHT) },
@@ -1973,6 +1992,9 @@ static struct usb_serial_driver option_1port_device = {
 #ifdef CONFIG_PM
 	.suspend           = usb_wwan_suspend,
 	.resume            = usb_wwan_resume,
+#if 1 //Added by Quectel
+	.reset_resume 	   = usb_wwan_resume,
+#endif
 #endif
 };
 
