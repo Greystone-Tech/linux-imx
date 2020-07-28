@@ -6,7 +6,7 @@
  * published by the Free Software Foundation.
  */
 
-#include "imx6ul-imx6ull-var-dart.dtsi"
+#include "imx6ul-imx6ull-var-dart-smartlink.dtsi"
 
 &iomuxc_snvs {
 	pinctrl-names = "default";
