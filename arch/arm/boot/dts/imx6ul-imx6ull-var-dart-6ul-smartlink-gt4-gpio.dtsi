@@ -264,14 +264,6 @@
 
 	pinctrl_uart1: uart1grp {
 		fsl,pins = <
-			MX6UL_PAD_UART1_TX_DATA__UART1_DCE_TX   0x1b0b1
-			MX6UL_PAD_UART1_RX_DATA__UART1_DCE_RX   0x1b0b1
-		>;
-	};
-
-
-	pinctrl_uart1: uart1grp {
-		fsl,pins = <
 			MX6UL_PAD_UART1_TX_DATA__UART1_DCE_TX	0x1b0b1
 			MX6UL_PAD_UART1_RX_DATA__UART1_DCE_RX	0x1b0b1
 		>;
@@ -394,7 +386,7 @@
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart4>;
 	fsl,uart-has-rtscts;
-	status = "enable";
+	status = "okay";
 };
 
 /* ttymxc4 UART 5 GPS Coms. we don't need this on GT4. USB enumerates 4 com ports */
