@@ -269,6 +269,23 @@
 		>;
 	};
 
+
+	pinctrl_uart1: uart1grp {
+		fsl,pins = <
+			MX6UL_PAD_UART1_TX_DATA__UART1_DCE_TX	0x1b0b1
+			MX6UL_PAD_UART1_RX_DATA__UART1_DCE_RX	0x1b0b1
+		>;
+	};
+
+	pinctrl_uart2: uart2grp {
+		fsl,pins = <
+			MX6UL_PAD_UART2_TX_DATA__UART2_DCE_TX	0x1b0b1
+			MX6UL_PAD_UART2_RX_DATA__UART2_DCE_RX	0x1b0b1
+			MX6UL_PAD_UART2_CTS_B__UART2_DCE_CTS	0x1b0b1
+			MX6UL_PAD_UART2_RTS_B__UART2_DCE_RTS	0x1b0b1
+		>;
+	};
+
 	pinctrl_uart3: uart3grp {
 		fsl,pins = <
 			MX6UL_PAD_UART3_TX_DATA__UART3_DCE_TX	0x1b0b1
@@ -277,6 +294,30 @@
 			MX6UL_PAD_UART3_RTS_B__UART3_DCE_RTS	0x1b0b1
 		>;
 	};
+
+/*
+			1b0b1 - 11011000010110001 - original
+			1f0b1 - 11111000010110001 - with 47K pullup - PAD_CTL_PUS_47K_UP	(1 << 14)
+			47K instrad of a 100K - stronger pullup	
+*/
+	pinctrl_uart4: uart4grp {
+		fsl,pins = <
+			MX6UL_PAD_LCD_CLK__UART4_DCE_TX		0x1b0b1
+			MX6UL_PAD_LCD_ENABLE__UART4_DCE_RX	0x1f0b1
+			MX6UL_PAD_LCD_HSYNC__UART4_DCE_CTS	0x1b0b1
+			MX6UL_PAD_LCD_VSYNC__UART4_DCE_RTS	0x1b0b1
+		>;
+	};
+
+	pinctrl_uart5: uart5grp {
+		fsl,pins = <
+			MX6UL_PAD_CSI_DATA00__UART5_DCE_TX	0x1b0b1
+			MX6UL_PAD_CSI_DATA01__UART5_DCE_RX	0x1b0b1
+			MX6UL_PAD_CSI_DATA03__UART5_DCE_CTS	0x1b0b1
+			MX6UL_PAD_CSI_DATA02__UART5_DCE_RTS	0x1b0b1
+		>;
+	};
+
 
 	pinctrl_wdog: wdoggrp {
 		fsl,pins = <
@@ -332,13 +373,38 @@
 };
 
 
-/* ttymxc2 UART  for gpio we disable this */
+/* ttymxc1 Bluetooth UART USB Serial Bridge*/
+&uart2 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_uart2>;
+	fsl,uart-has-rtscts;
+	status = "okay";
+};
+
+/* ttymxc2 UART 3 DB 9-Way for gpio we disable this */
 &uart3 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart3>;
 	fsl,uart-has-rtscts;
 	status = "disable";
 };
+
+/* ttymxc3 UART 4 GSM Coms */
+&uart4 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_uart4>;
+	fsl,uart-has-rtscts;
+	status = "enable";
+};
+
+/* ttymxc4 UART 5 GPS Coms. we don't need this on GT4. USB enumerates 4 com ports */
+&uart5 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_uart5>;
+	fsl,uart-has-rtscts;
+	status = "disable";
+};
+
 
 &usbotg1 {
 	dr_mode = "host";
