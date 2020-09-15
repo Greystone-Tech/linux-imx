@@ -12,16 +12,16 @@
 
 	pinctrl_hog_2: hoggrp-2 {
 		fsl,pins = <
-			/* MX6ULL_PAD_SNVS_TAMPER4__GPIO5_IO04	0x1b0b0	/* BT Enable */
-			/* MX6ULL_PAD_SNVS_TAMPER6__GPIO5_IO06	0x03029	/* WLAN Enable */
 			/* Greystone definitions */
-			/* OUTPUT */
-			MX6ULL_PAD_SNVS_TAMPER3__GPIO5_IO03	0x1b0b0 /* GSM POWER Active low to switch on make high J1.63 */
-			MX6ULL_PAD_SNVS_TAMPER8__GPIO5_IO08	0x1b0b0 /* SYSTEM LED J2.39 */
-			MX6ULL_PAD_SNVS_TAMPER9__GPIO5_IO09	0x1b0b0 /* SIM Select J2.49 */
-			MX6ULL_PAD_SNVS_TAMPER1__GPIO5_IO01	0x1b0b0 /* NO MAPPING FREE PIN external IO control J2.64 */
-			MX6ULL_PAD_SNVS_TAMPER7__GPIO5_IO07	0x1b0b0 /* PERST# (pen 22) can be used to reset the EC25 Used to be the RTC alarm J2.37 */
-			MX6ULL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x1b0b0 /* CHARGE STAT 2 now BAT LED J1.51   */
+				/* OUTPUT */
+				MX6ULL_PAD_SNVS_TAMPER8__GPIO5_IO08	0x1b0b0 /* SYSTEM LED J2.39 */
+				MX6ULL_PAD_SNVS_TAMPER9__GPIO5_IO09	0x1b0b0 /* SIM Select J2.49 */
+				MX6ULL_PAD_SNVS_TAMPER1__GPIO5_IO01	0x1b0b0 /* GSM ON_OFF J2.64 */
+				MX6ULL_PAD_SNVS_TAMPER3__GPIO5_IO03	0x1b0b0 /* GSM POWER J1.63 */
+				MX6ULL_PAD_SNVS_TAMPER7__GPIO5_IO07	0x1b0b0 /* PERST# (pen 22) can be used to reset the EC25 Used to be the RTC alarm J2.37 */
+			
+				/* INPUT */
+				MX6ULL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x17059 /* CHARGE STAT 2 J1.51   */
 		>;
 	};
 
