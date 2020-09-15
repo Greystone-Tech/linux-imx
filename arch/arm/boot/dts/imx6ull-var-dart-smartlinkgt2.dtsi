@@ -18,7 +18,7 @@
 				MX6ULL_PAD_SNVS_TAMPER9__GPIO5_IO09	0x1b0b0 /* SIM Select J2.49 */
 				MX6ULL_PAD_SNVS_TAMPER1__GPIO5_IO01	0x1b0b0 /* GSM ON_OFF J2.64 */
 				MX6ULL_PAD_SNVS_TAMPER3__GPIO5_IO03	0x1b0b0 /* GSM POWER J1.63 */
-				MX6ULL_PAD_SNVS_TAMPER7__GPIO5_IO07	0x1b0b0 /* PERST# (pen 22) can be used to reset the EC25 Used to be the RTC alarm J2.37 */
+				/*MX6ULL_PAD_SNVS_TAMPER7__GPIO5_IO07	0x1b0b0 /* RTC alarm J2.37 actually wired on this version of the GT2 */
 			
 				/* INPUT */
 				MX6ULL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x17059 /* CHARGE STAT 2 J1.51   */

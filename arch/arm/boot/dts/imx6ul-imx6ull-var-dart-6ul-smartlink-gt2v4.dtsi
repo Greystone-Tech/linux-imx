@@ -138,9 +138,9 @@
 				MX6UL_PAD_GPIO1_IO02__GPIO1_IO02	0x1b0b0 /* Output power LED  J2.48 */
 				MX6UL_PAD_GPIO1_IO09__GPIO1_IO09	0x1b0b0 /* GPS Enable J2.42 */
 				MX6UL_PAD_CSI_DATA07__GPIO4_IO28	0x1b0b0 /* Sleep mode control EC25 J2.36 */
-				MX6UL_PAD_CSI_DATA05__GPIO4_IO26	0x1b0b0 /* GPS Indicator J2.32 */
-				MX6UL_PAD_CSI_DATA04__GPIO4_IO25	0x1b0b0 /* BT activity indicator J2.30 */
-				MX6UL_PAD_CSI_DATA06__GPIO4_IO27	0x1b0b0 /* WiFi activity indicator J2.38  */
+				/*MX6UL_PAD_CSI_DATA05__GPIO4_IO26	0x1b0b0 /* GPS Indicator J2.32 */
+				/*MX6UL_PAD_CSI_DATA04__GPIO4_IO25	0x1b0b0 /* BT activity indicator J2.30 */
+				/*MX6UL_PAD_CSI_DATA06__GPIO4_IO27	0x1b0b0 /* WiFi activity indicator J2.38  */
 				/*MX6UL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x1b0b0 */  /* External W_DOG manual reset */
 				MX6UL_PAD_CSI_PIXCLK__GPIO4_IO18	0x1b0b0 /* ISET_A Fast charging for power supply J1.64 */
 				
@@ -154,7 +154,7 @@
 				MX6UL_PAD_CSI_PIXCLK__GPIO4_IO18        0x17059 /* ISET_A Fast charging for power supply */
 				
 			>;
-		};
+	};
 
 	pinctrl_enet2: enet2grp {
 		fsl,pins = <
