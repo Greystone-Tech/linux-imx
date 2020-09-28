@@ -21,6 +21,7 @@
 #include "imx6ul-imx6ull-var-dart-nand.dtsi"
 
 #include "imx6ull-var-dart-6ul-smartlinkgt2.dtsi"
+#include "imx6ul-imx6ull-var-dart-6ul-smartlink-gt2v4.dtsi"
 #include "imx6ul-imx6ull-var-dart-6ul-smartlink-sd-card.dtsi"
 
 / {
