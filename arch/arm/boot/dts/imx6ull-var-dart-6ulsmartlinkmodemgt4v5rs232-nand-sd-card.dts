@@ -21,10 +21,10 @@
 #include "imx6ul-imx6ull-var-dart-nand.dtsi"
 
 #include "imx6ull-var-dart-6ul-smartlinkgt4.dtsi"
-#include "imx6ul-imx6ull-var-dart-6ul-smartlink-gt4-gpio.dtsi"
+#include "imx6ul-imx6ull-var-dart-6ul-smartlink-gt4-rs232.dtsi"
 #include "imx6ul-imx6ull-var-dart-6ul-smartlink-sd-card.dtsi"
 
 / {
-	model = "Variscite DART-6UL with i.MX6ULL, NAND flash & SD card support on VAR-6ULGreystone Modem GT4 v5 gpio";
+	model = "Variscite DART-6UL with i.MX6ULL, NAND flash & SD card support on VAR-6ULGreystone Modem GT4 v5 RS232";
 	compatible = "variscite,imx6ul-var-dart", "fsl,imx6ull";
 };
