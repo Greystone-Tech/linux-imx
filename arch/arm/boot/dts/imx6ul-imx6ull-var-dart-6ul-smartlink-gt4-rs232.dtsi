@@ -114,9 +114,9 @@
 		compatible = "isil,isl12057";
 		reg = <0x68>;
 		pinctrl-names = "default";
-		pinctrl-0 = <&pinctrl_rtc>;
+		/*pinctrl-0 = <&pinctrl_rtc>;
 		interrupt-parent = <&gpio5>;
-		interrupts = <7 IRQ_TYPE_EDGE_FALLING>;
+		interrupts = <7 IRQ_TYPE_EDGE_FALLING>;*/
 	};
 };
 
